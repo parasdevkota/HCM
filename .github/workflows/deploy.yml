@@ -1,0 +1,36 @@
+name: HCM Deployment Pipeline
+
+on:
+  push:
+    branches: [ "feature/backend-product-crud", "develop" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          npm install
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd HCM
+            git pull origin feature/backend-product-crud
+            cd backend
+            npm install
+            # Using PM2 to keep the server alive as per Tutorial 5
+            pm2 restart all || pm2 start server.js --name "hcm-backend"
