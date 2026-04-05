@@ -16,7 +16,9 @@ const listingSchema = new mongoose.Schema({
   imageUrl: { 
     type: String 
   },
-  
+  description: {
+    type: String 
+  },
   user: { 
     type: mongoose.Schema.Types.ObjectId, 
     required: true, 
