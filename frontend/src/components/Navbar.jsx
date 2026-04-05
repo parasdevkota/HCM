@@ -12,12 +12,13 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <Link to="/" className="text-2xl font-bold">Your apps name</Link>
+      <Link to="/home" className="text-2xl font-bold">Handmade Crafts Marketplace</Link>
       <div>
         {user ? (
           <>
-            <Link to="/tasks" className="mr-4">CRUD</Link>
-            <Link to="/profile" className="mr-4">Profile</Link>
+            <Link to="/home" className="mr-4">View Shop</Link>
+            <Link to="/add-listing" className="mr-4">Sell Items</Link>
+            <Link to="/profile" className="mr-4"> My Profile</Link>
             <button
               onClick={handleLogout}
               className="bg-red-500 px-4 py-2 rounded hover:bg-red-700"
