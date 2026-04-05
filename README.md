@@ -1,25 +1,27 @@
+# Handmade Crafts Marketplace - Assessment 2
 
-**Assessment 1.2 (Total Marks **20**)**
+This is a full-stack web application for the Handmade Crafts Marketplace. It's built using the MERN stack (MongoDB, Express, React, Node.js) and features a custom UI to display craft items like pottery, jewelry, and art.
 
-Assignment: **Software requirements analysis and design (**Full-Stack CRUD Application Development with DevOps Practices**)**
+## Project Structure
+- **/backend**: Node.js server, Express routes, and MongoDB models.
+- **/frontend**: React.js application with a CSS grid for the marketplace.
 
-#Handmade Crafts Marketplace - Assessment 1.2
+## How to Run Locally
 
----
+### 1. Backend Setup
+1. Open your terminal and go into the backend folder: `cd backend`
+2. Install the packages: `npm install`
+3. Create a `.env` file and add your `MONGODB_URI`, `PORT=5001`, and `JWT_SECRET`.
+4. Start the server: `npm start`
 
-**Objective**
+### 2. Frontend Setup
+1. Open a second terminal window and go to the frontend folder: `cd frontend`
+2. Install the packages: `npm install`
+3. Start the React app: `npm start`
+4. The app should open on `localhost:3000`.
 
-For this assessment, you have already been assigned a project. Your task is to develop a system that implements CRUD (Create, Read, Update, Delete) operations based on the selected project. The system should include both a user panel and an admin panel. Depending on the nature of your chosen project, you may decide how many CRUD operations are required to support the functionality of the system. You have been provided with a starter project that includes user authentication using Node.js, React.js, and MongoDB, your should extend this application based on your assigned project requirements. Ensure that the implemented features are appropriate and meaningful for your selected project. Your project should include the following:
-In this assignment you will complete the following tasks:
-
-* **Basic Version Control using GitHub**
-* **Development, CI/CD Integration for Automated Deployment**
-* **Project report**
-
- 
----
-
-**GitHub link of the starter project: **[https://github.com/nahaQUT/sampleapp_IFQ636.git](https://github.com/nahaQUT/sampleapp_IFQ636.git)
-
----
-
+## Key Features Implemented
+- **Login/Register**: Users can create accounts and sign in (JWT based).
+- **Marketplace Home**: A grid view that fetches live data from MongoDB Atlas.
+- **Selling Items**: A form to add new craft listings to the database.
+- **CI/CD**: GitHub Actions is set up to check the build every time a code is pushed.
