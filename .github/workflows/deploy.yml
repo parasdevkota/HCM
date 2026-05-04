@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd HCM
+            cd ~/HCM/HCM
             git pull origin feature/backend-product-crud
             cd backend
             npm install
